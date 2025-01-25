@@ -7,12 +7,14 @@ public class Player : MonoBehaviour
     public float maxHealth = 100;
 
     public float HealthDrainPerSecond = 1f;
+    public float StandingHealthDrainPerSecond = 1f;
 
     private float health;
 
     private bool isDead = false;
 
     private PlayerInput playerInput;
+    private PlayerMovement playerMovement;
 
     public float Health => health;
 
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
     {
         health = maxHealth;
         playerInput = GetComponent<PlayerInput>();
+        playerMovement = GetComponent<PlayerMovement>();
+
         playerInput.Actions.Reload.performed += Reload;
     }
 
@@ -54,7 +58,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        health -= HealthDrainPerSecond * Time.deltaTime;
+        var drain = playerMovement.CurrentMovement == Vector3.zero ? StandingHealthDrainPerSecond : HealthDrainPerSecond;
+        health -= drain * Time.deltaTime;
         if (health <= 0)
         {
             Die();

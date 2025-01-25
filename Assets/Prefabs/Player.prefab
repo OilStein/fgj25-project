@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   HealthDrainPerSecond: 2
+  StandingHealthDrainPerSecond: 0.2
 --- !u!114 &4739446589691676595
 MonoBehaviour:
   m_ObjectHideFlags: 0

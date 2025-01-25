@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private float moveSpeed;
 
+    public Vector3 CurrentMovement => moveSpeed * moveDirection;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();

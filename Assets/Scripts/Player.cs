@@ -15,11 +15,16 @@ public class Player : MonoBehaviour
 
     private bool isDead = false;
 
+    private float healthGain = 0;
+
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
 
+    public bool IsDead => isDead;
+
     public float Health => health;
 
+    public event Action<float> HealthGainStarted = delegate { };
     public event Action Death = delegate { };
 
     void Start()
@@ -38,7 +43,18 @@ public class Player : MonoBehaviour
         playerMovement.Dashed -= OnDash;
     }
 
-    public void GainLife(float heal)
+    public void StartHealthGain(float amountPerSecond)
+    {
+        healthGain = amountPerSecond;
+        HealthGainStarted(amountPerSecond);
+    }
+
+    public void StopHealthGain()
+    {
+        healthGain = 0;
+    }
+
+    public void GainHealth(float heal)
     {
         if (isDead)
         {
@@ -62,6 +78,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (healthGain != 0)
+        {
+            GainHealth(healthGain * Time.deltaTime);
+            return;
+        }
+
         var movementSpeed = playerMovement.CurrentMovement.magnitude;
         var drain = movementSpeed <= 1f ? StandingHealthDrainPerSecond : HealthDrainPerSecond;
         DrainHealth(drain * Time.deltaTime);

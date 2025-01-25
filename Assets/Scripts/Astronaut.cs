@@ -42,7 +42,7 @@ public class Astronaut : MonoBehaviour
             if (CurrentAir > 0)
             {
                 CurrentAir -= AirConsumptionRate * Time.deltaTime;
-                player.GainLife(AirConsumptionRate * Time.deltaTime);
+                player.GainHealth(AirConsumptionRate * Time.deltaTime);
             }
             
         }

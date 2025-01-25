@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController characterController;
     private PlayerInput playerInput;
+    private Player player;
 
     private float pitch = 0;
     private float yaw = 0;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         playerInput = GetComponent<PlayerInput>();
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -114,6 +116,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
+        if (player.IsDead)
+        {
+            return;
+        }
+
         var moveInput = playerInput.Actions.Move.ReadValue<Vector2>();
 
         if (isGrounded)

@@ -58,7 +58,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        var drain = playerMovement.CurrentMovement == Vector3.zero ? StandingHealthDrainPerSecond : HealthDrainPerSecond;
+        var movementSpeed = playerMovement.CurrentMovement.magnitude;
+        var drain = movementSpeed <= 1f ? StandingHealthDrainPerSecond : HealthDrainPerSecond;
         health -= drain * Time.deltaTime;
         if (health <= 0)
         {

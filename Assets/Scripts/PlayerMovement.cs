@@ -32,7 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private float moveSpeed;
 
-    public Vector3 CurrentMovement => moveSpeed * moveDirection;
+    public Vector3 CurrentMovement => moveSpeed * moveDirection +
+        new Vector3(0, verticalSpeed, 0);
 
     void Start()
     {
@@ -105,9 +106,8 @@ public class PlayerMovement : MonoBehaviour
 
         verticalSpeed += Gravity * Time.deltaTime;
         verticalSpeed = Mathf.Clamp(verticalSpeed, -VerticalSpeedLimit, VerticalSpeedLimit);
-        var verticalMovement = new Vector3(0, verticalSpeed * Time.deltaTime, 0);
 
-        var movement = moveDirection * moveSpeed * Time.deltaTime + verticalMovement;
+        var movement = CurrentMovement * Time.deltaTime;
         var collisionFlags = characterController.Move(movement);
 
         if (collisionFlags.HasFlag(CollisionFlags.Below))

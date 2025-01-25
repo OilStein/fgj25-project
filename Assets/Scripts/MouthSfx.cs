@@ -21,6 +21,7 @@ public class MouthSfx : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         player.HealthGainStarted += OnHealthGainStarted;
+        player.HealthPicked += OnHealthPicked;
         player.Death += OnDeath;
         playerMovement.Jumped += OnJump;
         playerMovement.Dashed += OnDash;
@@ -29,6 +30,7 @@ public class MouthSfx : MonoBehaviour
     void OnDestroy()
     {
         player.HealthGainStarted -= OnHealthGainStarted;
+        player.HealthPicked -= OnHealthPicked;
         player.Death -= OnDeath;
         playerMovement.Jumped -= OnJump;
         playerMovement.Dashed -= OnDash;
@@ -50,6 +52,11 @@ public class MouthSfx : MonoBehaviour
     }
 
     private void OnDash()
+    {
+        Play(airSound);
+    }
+
+    private void OnHealthPicked(float amount)
     {
         Play(airSound);
     }

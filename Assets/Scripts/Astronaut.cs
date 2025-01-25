@@ -4,47 +4,33 @@ using UnityEngine;
 
 public class Astronaut : MonoBehaviour
 {
-    public float CurrentAir = 100;
-    public float AirConsumptionRate = 5;
+    public float HealthAmount = 5;
 
-    bool isInZone = false;
+    private bool healthPicked = false;
 
     private Player player;
 
+    public bool HealthPicked => healthPicked;
+
+    public void MarkPicked()
+    {
+        healthPicked = true;
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == GameConstants.Tags.Player && !healthPicked)
         {
-            Debug.Log("Trigger detected in astronaut with " + other.gameObject.name);
             player = other.gameObject.GetComponent<Player>();
-            isInZone = true;
+            player.HealthPickTarget = this;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exited trigger zone: " + other.gameObject.name);
-        isInZone = false;
-    }
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isInZone)
+        if (other.gameObject.tag == GameConstants.Tags.Player && player)
         {
-            if (CurrentAir > 0)
-            {
-                CurrentAir -= AirConsumptionRate * Time.deltaTime;
-                player.GainHealth(AirConsumptionRate * Time.deltaTime);
-            }
-            
+            player.HealthPickTarget = null;
         }
     }
 }

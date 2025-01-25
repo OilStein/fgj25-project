@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
 
     private float healthGain = 0;
 
+    private Astronaut healthPickTarget;
+
     private PlayerInput playerInput;
     private PlayerMovement playerMovement;
 
@@ -24,8 +26,21 @@ public class Player : MonoBehaviour
 
     public float Health => health;
 
+    public Astronaut HealthPickTarget
+    {
+        get => healthPickTarget;
+        set
+        {
+            healthPickTarget = value;
+            HealthPickTargetChange(value);
+        }
+    }
+
     public event Action<float> HealthGainStarted = delegate { };
     public event Action Death = delegate { };
+    
+    public event Action<Astronaut> HealthPickTargetChange = delegate { };
+    public event Action<float> HealthPicked = delegate { };
 
     void Start()
     {
@@ -34,12 +49,14 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
 
         playerInput.Actions.Reload.performed += Reload;
+        playerInput.Actions.Interact.started += PickHealth;
         playerMovement.Dashed += OnDash;
     }
 
     void OnDestroy()
     {
         playerInput.Actions.Reload.performed -= Reload;
+        playerInput.Actions.Interact.started -= PickHealth;
         playerMovement.Dashed -= OnDash;
     }
 
@@ -106,5 +123,17 @@ public class Player : MonoBehaviour
     private void OnDash()
     {
         DrainHealth(DashDrain);
+    }
+
+    private void PickHealth(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (healthPickTarget)
+        {
+            var amount = healthPickTarget.HealthAmount;
+            GainHealth(amount);
+            healthPickTarget.MarkPicked();
+            HealthPickTarget = null;
+            HealthPicked(amount);
+        }
     }
 }

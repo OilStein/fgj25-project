@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth()
     {
-        healthSlider.value = player.health;
+        healthSlider.value = player.Health;
         UpdateFillColor();
     }
 

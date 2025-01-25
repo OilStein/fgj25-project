@@ -31,10 +31,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private float moveSpeed;
 
+    private InputSystemActions inputActions;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        inputActions = new InputSystemActions();
+        inputActions.Player.Enable();
     }
 
     void Update()
@@ -45,14 +49,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool IsTryingToJump()
-        => Input.GetButtonDown(GameConstants.Input.Jump);
+        => inputActions.Player.Jump.WasPerformedThisFrame();
     
     private bool IsTryingToSprint()
-        => Input.GetButton(GameConstants.Input.Run);
+        => inputActions.Player.Sprint.IsPressed();
 
     private void UpdateRotation()
     {
-        var mouseDelta = Input.mousePositionDelta;
+        var mouseDelta = inputActions.Player.Look.ReadValue<Vector2>();
 
         pitch -= mouseDelta.y * YSensitivity;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
@@ -73,8 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
-        var horizontal = Input.GetAxisRaw(GameConstants.Input.Horizontal);
-        var vertical = Input.GetAxisRaw(GameConstants.Input.Vertical);
+        var moveInput = inputActions.Player.Move.ReadValue<Vector2>();
 
         if (isGrounded)
         {
@@ -84,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             var verticalDirection = camera.forward;
             verticalDirection.y = 0;
             verticalDirection.Normalize();
-            moveDirection = horizontalDirection * horizontal + verticalDirection * vertical;
+            moveDirection = horizontalDirection * moveInput.x + verticalDirection * moveInput.y;
             if (moveDirection != Vector3.zero)
             {
                 moveDirection.Normalize();

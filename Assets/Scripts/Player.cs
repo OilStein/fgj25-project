@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     }
 
     public event Action<float> HealthGainStarted = delegate { };
+    public event Action HealthGainStopped = delegate { };
     public event Action Death = delegate { };
     
     public event Action<Astronaut> HealthPickTargetChange = delegate { };
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
     public void StopHealthGain()
     {
         healthGain = 0;
+        HealthGainStopped();
     }
 
     public void GainHealth(float heal)

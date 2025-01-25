@@ -119,6 +119,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1329099094
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 89.10657
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0072138333
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 253.73972
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 03adbc98a4e614e78b7dc88a9a4d840a, type: 2}
+    - target: {fileID: 919132149155446097, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
+      propertyPath: m_Name
+      value: Rusty_Gas_Tank_udmkdejqx_Low
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41511cb752f5b43a6ac90552083405a7, type: 3}
 --- !u!1 &1793328945
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,3 +375,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1793328948}
   - {fileID: 1919381245}
+  - {fileID: 1329099094}

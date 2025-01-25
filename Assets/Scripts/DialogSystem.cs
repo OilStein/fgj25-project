@@ -3,12 +3,17 @@ using UnityEngine;
 
 public class DialogSystem : MonoBehaviour
 {
+    private static DialogSystem instance;
+
+    public static DialogSystem Instance => instance;
+
     private AudioSource audioSource;
 
     private DialogSeries currentSeries;
     private int currentIndex = 0;
 
     public event Action<DialogSeries.DialogEntry> EntryChange = delegate { };
+    public event Action DialogStop = delegate { };
 
     public void PlayDialog(DialogSeries dialogSeries)
     {
@@ -20,6 +25,7 @@ public class DialogSystem : MonoBehaviour
 
     void Start()
     {
+        instance = this;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -38,6 +44,7 @@ public class DialogSystem : MonoBehaviour
                 if (currentIndex >= currentSeries.Entries.Length)
                 {
                     currentSeries = null;
+                    DialogStop();
                     return;
                 }
                 

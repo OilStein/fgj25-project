@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,29 +10,41 @@ public class Player : MonoBehaviour
 
     private float health;
 
+    private bool isDead = false;
+
+    private PlayerInput playerInput;
+
     public float Health => health;
+
+    public event Action Death = delegate { };
 
     void Start()
     {
         health = maxHealth;
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.Actions.Reload.performed += Reload;
     }
 
     public void GainLife(float heal)
     {
+        if (isDead)
+        {
+            return;
+        }
+
         health += heal;
         health = Mathf.Clamp(health, 0, maxHealth);
-        Debug.Log("Player gained health: " + health);
     }
 
     public void Die()
     {
-        Debug.Log("Player has died");
-    }
+        if (isDead)
+        {
+            return;
+        }
 
-    public void Respawn()
-    {
-        health = 100;
-        Debug.Log("Player has respawned");
+        isDead = true;
+        Death();
     }
 
     void Update()
@@ -40,5 +54,10 @@ public class Player : MonoBehaviour
         {
             Die();
         }
+    }
+
+    private void Reload(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

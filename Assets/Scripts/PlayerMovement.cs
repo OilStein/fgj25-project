@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private new Transform camera;
 
     private CharacterController characterController;
+    private PlayerInput playerInput;
 
     private float pitch = 0;
     private float yaw = 0;
@@ -31,14 +32,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private float moveSpeed;
 
-    private InputSystemActions inputActions;
-
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        inputActions = new InputSystemActions();
-        inputActions.Player.Enable();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
@@ -49,14 +47,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private bool IsTryingToJump()
-        => inputActions.Player.Jump.WasPerformedThisFrame();
+        => playerInput.Actions.Jump.WasPerformedThisFrame();
     
     private bool IsTryingToSprint()
-        => inputActions.Player.Sprint.IsPressed();
+        => playerInput.Actions.Sprint.IsPressed();
 
     private void UpdateRotation()
     {
-        var mouseDelta = inputActions.Player.Look.ReadValue<Vector2>();
+        var mouseDelta = playerInput.Actions.Look.ReadValue<Vector2>();
 
         pitch -= mouseDelta.y * YSensitivity;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
@@ -77,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
-        var moveInput = inputActions.Player.Move.ReadValue<Vector2>();
+        var moveInput = playerInput.Actions.Move.ReadValue<Vector2>();
 
         if (isGrounded)
         {

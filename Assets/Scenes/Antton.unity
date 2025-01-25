@@ -569,6 +569,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2002392173}
+    - target: {fileID: 3002864117514614204, guid: 5b7bc79bcfbf5471fa5ba429b2fb2fac, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2002392173}
     - target: {fileID: 4152279111023864580, guid: 5b7bc79bcfbf5471fa5ba429b2fb2fac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -797,6 +801,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3758095230049305454, guid: e5735212608bf664e877eda25e79cee0, type: 3}
+      propertyPath: HealthDrainPerSecond
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4254504622077495554, guid: e5735212608bf664e877eda25e79cee0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

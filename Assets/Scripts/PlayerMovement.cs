@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collisionFlags.HasFlag(CollisionFlags.Below))
         {
-            verticalSpeed = 0;
+            verticalSpeed = -1f;
             isGrounded = true;
         }
         else

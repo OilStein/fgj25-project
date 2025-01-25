@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private int maxHealth = 100;
+    public int maxHealth = 100;
     public int health;
-
-    public HealthBar healthBar;
 
     void Start()
     {
@@ -17,7 +15,6 @@ public class Player : MonoBehaviour
         health -= damage;
         health = Mathf.Clamp(health, 0, maxHealth);
         Debug.Log("Player lost health: " + health);
-        healthBar.SetHealth(health);
     }
 
     public void GainLife(int heal)
@@ -25,7 +22,6 @@ public class Player : MonoBehaviour
         health += heal;
         health = Mathf.Clamp(health, 0, maxHealth);
         Debug.Log("Player gained health: " + health);
-        healthBar.SetHealth(health);
     }
 
     public void Die()
@@ -37,6 +33,5 @@ public class Player : MonoBehaviour
     {
         health = 100;
         Debug.Log("Player has respawned");
-        healthBar.SetHealth(health);
     }
 }

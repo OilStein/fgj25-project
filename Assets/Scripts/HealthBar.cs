@@ -7,16 +7,17 @@ public class HealthBar : MonoBehaviour
     public Gradient healthGradient;  // Gradient for the health color
     public Image fillImage;  // Reference to the fill image in the slider
 
-    public void SetMaxHealth(int maxHealth)
+    public Player player;  // Reference to the player
+    public void SetMaxHealth()
     {
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = maxHealth;
+        healthSlider.maxValue = player.maxHealth;
+        healthSlider.value = player.maxHealth;
         UpdateFillColor();
     }
 
-    public void SetHealth(int currentHealth)
+    public void SetHealth()
     {
-        healthSlider.value = currentHealth;
+        healthSlider.value = player.health;
         UpdateFillColor();
     }
 
@@ -37,6 +38,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        SetHealth();
     }
 }

@@ -39,8 +39,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector3 CurrentMovement => moveSpeed * moveDirection +
         new Vector3(0, verticalSpeed, 0);
+    
+    public bool IsGrounded => isGrounded;
 
     public event Action Dashed = delegate {};
+    public event Action Jumped = delegate {};
+    public event Action Landed = delegate {};
 
     void Start()
     {
@@ -99,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 verticalSpeed = JumpVerticalSpeed;
                 isGrounded = false;
                 dashTimer = 0;
+                Jumped();
             }
             else if (Time.time - dashTimer >= DashCooldown)
             {
@@ -144,7 +149,12 @@ public class PlayerMovement : MonoBehaviour
         if (collisionFlags.HasFlag(CollisionFlags.Below))
         {
             verticalSpeed = -1f;
+            var wasGrounded = isGrounded;
             isGrounded = true;
+            if (!wasGrounded)
+            {
+                Landed();
+            }
         }
         else
         {

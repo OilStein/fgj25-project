@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public float Gravity = -10;
     public float VerticalSpeedLimit = 20;
 
+    public float DashCooldown = 1f;
+
     [SerializeField]
     private new Transform camera;
 
@@ -32,8 +35,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     private float moveSpeed;
 
+    private float dashTimer = 0;
+
     public Vector3 CurrentMovement => moveSpeed * moveDirection +
         new Vector3(0, verticalSpeed, 0);
+
+    public event Action Dashed = delegate {};
 
     void Start()
     {
@@ -55,6 +62,22 @@ public class PlayerMovement : MonoBehaviour
     private bool IsTryingToSprint()
         => playerInput.Actions.Sprint.IsPressed();
 
+    private void Dash()
+    {
+        dashTimer = Time.time;
+        var direction = camera.forward;
+        var moveDir = direction;
+        moveDir.y = 0;
+        var moveSpeed = moveDir.magnitude * SprintSpeed;
+        moveDir.Normalize();
+        var verticalSpeed = direction.y * SprintSpeed;
+        moveDirection = moveDir;
+        this.moveSpeed = moveSpeed;
+        this.verticalSpeed = verticalSpeed;
+
+        Dashed();
+    }
+
     private void UpdateRotation()
     {
         var mouseDelta = playerInput.Actions.Look.ReadValue<Vector2>();
@@ -69,10 +92,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateJump()
     {
-        if (isGrounded && IsTryingToJump())
+        if (IsTryingToJump())
         {
-            verticalSpeed = JumpVerticalSpeed;
-            isGrounded = false;
+            if (isGrounded)
+            {
+                verticalSpeed = JumpVerticalSpeed;
+                isGrounded = false;
+                dashTimer = 0;
+            }
+            else if (Time.time - dashTimer >= DashCooldown)
+            {
+                Dash();
+            }
         }
     }
 

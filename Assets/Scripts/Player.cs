@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float HealthDrainPerSecond = 1f;
     public float StandingHealthDrainPerSecond = 1f;
 
+    public float DashDrain = 10f;
+
     private float health;
 
     private bool isDead = false;
@@ -27,11 +29,13 @@ public class Player : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
 
         playerInput.Actions.Reload.performed += Reload;
+        playerMovement.Dashed += OnDash;
     }
 
     void OnDestroy()
     {
         playerInput.Actions.Reload.performed -= Reload;
+        playerMovement.Dashed -= OnDash;
     }
 
     public void GainLife(float heal)
@@ -60,7 +64,12 @@ public class Player : MonoBehaviour
     {
         var movementSpeed = playerMovement.CurrentMovement.magnitude;
         var drain = movementSpeed <= 1f ? StandingHealthDrainPerSecond : HealthDrainPerSecond;
-        health -= drain * Time.deltaTime;
+        DrainHealth(drain * Time.deltaTime);
+    }
+
+    private void DrainHealth(float amount)
+    {
+        health -= amount;
         if (health <= 0)
         {
             Die();
@@ -70,5 +79,10 @@ public class Player : MonoBehaviour
     private void Reload(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnDash()
+    {
+        DrainHealth(DashDrain);
     }
 }

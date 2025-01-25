@@ -11,4 +11,9 @@ public class PlayerInput : MonoBehaviour
         inputActions = new InputSystemActions();
         inputActions.Player.Enable();
     }
+
+    void OnDestroy()
+    {
+        inputActions.Player.Disable();
+    }
 }

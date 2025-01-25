@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
         playerInput.Actions.Reload.performed += Reload;
     }
 
+    void OnDestroy()
+    {
+        playerInput.Actions.Reload.performed -= Reload;
+    }
+
     public void GainLife(float heal)
     {
         if (isDead)

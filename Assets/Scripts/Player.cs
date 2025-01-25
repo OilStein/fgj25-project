@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
         health = maxHealth;
     }
 
-    public void GainLife(int heal)
+    public void GainLife(float heal)
     {
         health += heal;
         health = Mathf.Clamp(health, 0, maxHealth);

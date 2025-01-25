@@ -3,9 +3,10 @@ using UnityEngine;
 public class Cylinder : MonoBehaviour
 {
 
-    public int maxAir = 100;
+    public float lifeGain = 1.0f;
+
     private Player player;
-    private float timer = 0.0f;
+
 
     private bool isInTheZone = false;
 
@@ -35,13 +36,9 @@ public class Cylinder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         if (isInTheZone)
         {
-            if (timer >= 1.0f)
-            {
-                player.GainLife(1);
-            }
+            player.GainLife(lifeGain * Time.deltaTime);
         }
     }
 }

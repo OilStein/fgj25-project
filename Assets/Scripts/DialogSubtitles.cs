@@ -13,14 +13,20 @@ public class DialogSubtitles : MonoBehaviour
     {
         text = GetComponent<TextMeshProUGUI>();
         text.text = "";
-        dialogSystem.EntryChange += OnEntryChange;
-        dialogSystem.DialogStop += OnDialogStop;
+        if (dialogSystem)
+        {
+            dialogSystem.EntryChange += OnEntryChange;
+            dialogSystem.DialogStop += OnDialogStop;
+        }
     }
 
     void OnDestroy()
     {
-        dialogSystem.EntryChange -= OnEntryChange;
-        dialogSystem.DialogStop -= OnDialogStop;
+        if (dialogSystem)
+        {
+            dialogSystem.EntryChange -= OnEntryChange;
+            dialogSystem.DialogStop -= OnDialogStop;
+        }
     }
 
     private void OnDialogStop()

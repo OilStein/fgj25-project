@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: TestDialog
   m_EditorClassIdentifier: 
   Entries:
-  - AudioClip: {fileID: 8300000, guid: 56678298d78719846a9bf3255da888e1, type: 3}
-    SubtitleText: Holy Jesus. What is that? What the fuck is that?
+  - AudioClip: {fileID: 8300000, guid: 060a2e94eab8b7d4dae97e2afc613afd, type: 3}
+    SubtitleText: Holy Jesus...
+  - AudioClip: {fileID: 8300000, guid: 0403f0cc170a82d408a9a1eed4af9d9a, type: 3}
+    SubtitleText: What is that?
+  - AudioClip: {fileID: 8300000, guid: 8d3a1e40efed00a4ebcea42cc2bc5dab, type: 3}
+    SubtitleText: What the fuck is that?!

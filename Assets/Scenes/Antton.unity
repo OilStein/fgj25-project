@@ -585,6 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthAmount: 5
+  PickDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}
 --- !u!135 &1894412684
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -869,6 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthAmount: 5
+  PickDialog: {fileID: 0}
 --- !u!135 &1985499373
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -947,6 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthAmount: 5
+  PickDialog: {fileID: 0}
 --- !u!135 &2060261817
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1111,7 +1114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229229879074732721, guid: f394a6a2c5a763d4188c1ee4dac082b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.28
+      value: 4.28
       objectReference: {fileID: 0}
     - target: {fileID: 6229229879074732721, guid: f394a6a2c5a763d4188c1ee4dac082b4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1119,7 +1122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229229879074732721, guid: f394a6a2c5a763d4188c1ee4dac082b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.19
+      value: 11.35
       objectReference: {fileID: 0}
     - target: {fileID: 6229229879074732721, guid: f394a6a2c5a763d4188c1ee4dac082b4, type: 3}
       propertyPath: m_LocalRotation.w

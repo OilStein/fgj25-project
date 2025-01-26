@@ -134,6 +134,10 @@ public class Player : MonoBehaviour
             var amount = healthPickTarget.HealthAmount;
             GainHealth(amount);
             healthPickTarget.MarkPicked();
+            if (healthPickTarget.PickDialog != null)
+            {
+                DialogSystem.Instance.PlayDialog(healthPickTarget.PickDialog);
+            }
             HealthPickTarget = null;
             HealthPicked(amount);
             GameWinState.Instance.IncrementBadEndingCount();

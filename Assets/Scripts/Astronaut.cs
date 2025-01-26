@@ -6,6 +6,8 @@ public class Astronaut : MonoBehaviour
 {
     public float HealthAmount = 5;
 
+    public DialogSeries PickDialog;
+
     private bool healthPicked = false;
 
     private Player player;

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PersonEncounter2
   m_EditorClassIdentifier: 
   Entries:
-  - AudioClip: {fileID: 8300000, guid: 7ac916d705fb4d04588d5d8d541319d4, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 6f93445d11b7c4ad7a5c49d7bf0d90fb, type: 3}
     SubtitleText: "This person worked on the ship\u2019s vents. They had a suspicious
       aura about them."

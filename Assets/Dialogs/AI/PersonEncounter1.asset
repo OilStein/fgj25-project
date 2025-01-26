@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PersonEncounter1
   m_EditorClassIdentifier: 
   Entries:
-  - AudioClip: {fileID: 8300000, guid: 3356fcc1a2a095741b43266e35bfc484, type: 3}
+  - AudioClip: {fileID: 8300000, guid: 2a7c2e1642c4d4e14b8fa23296bb8d75, type: 3}
     SubtitleText: "Captain\u2026 I\u2019m sorry. I know Lucretia meant everything
       to you."

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PersonEncounter3
   m_EditorClassIdentifier: 
   Entries:
-  - AudioClip: {fileID: 8300000, guid: 4844760e4d7b47c40b34eb2ede14a102, type: 3}
+  - AudioClip: {fileID: 8300000, guid: a237662076d5b4037aa56645c6d2ee91, type: 3}
     SubtitleText: This person never really talked much, but their eyes had a certain
       kindness in them. They made me feel at ease.

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float DashCooldown = 1f;
 
+    public float JumpInAirThreshold = 0.05f;
+
     [SerializeField]
     private new Transform camera;
 
@@ -30,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private float yaw = 0;
 
     private bool isGrounded = false;
+    private float lastGroundedTime;
+    private bool jumpedInAir = false;
 
     private float verticalSpeed = 0;
 
@@ -100,10 +104,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsTryingToJump())
         {
-            if (isGrounded)
+            if (isGrounded || (!jumpedInAir && Time.time - lastGroundedTime <= JumpInAirThreshold))
             {
                 verticalSpeed = JumpVerticalSpeed;
                 isGrounded = false;
+                jumpedInAir = true;
                 dashTimer = 0;
                 Jumped();
             }
@@ -158,6 +163,8 @@ public class PlayerMovement : MonoBehaviour
             verticalSpeed = -1f;
             var wasGrounded = isGrounded;
             isGrounded = true;
+            jumpedInAir = false;
+            lastGroundedTime = Time.time;
             if (!wasGrounded)
             {
                 Landed();

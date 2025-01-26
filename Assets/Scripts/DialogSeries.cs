@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DialogSeries : ScriptableObject
 {
+    #if UNITY_EDITOR
     [MenuItem("Assets/Create/DialogSeries")]
     public static void Create()
     {
@@ -16,6 +17,7 @@ public class DialogSeries : ScriptableObject
 
         Selection.activeObject = asset;
     }
+    #endif
 
     [Serializable]
     public struct DialogEntry

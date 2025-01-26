@@ -561,7 +561,8 @@ MonoBehaviour:
   JumpVerticalSpeed: 5
   Gravity: -5
   VerticalSpeedLimit: 50
-  DashCooldown: 3
+  DashCooldown: 2.5
+  JumpInAirThreshold: 0.05
   camera: {fileID: 2365433179738261809}
 --- !u!114 &3758095230049305454
 MonoBehaviour:
@@ -576,9 +577,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  HealthDrainPerSecond: 2
-  StandingHealthDrainPerSecond: 0.2
-  DashDrain: 10
+  HealthDrainPerSecond: 1
+  StandingHealthDrainPerSecond: 0.1
+  DashDrain: 6
+  MainMenuScene: 0
 --- !u!114 &4739446589691676595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,4 +606,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Origin: {x: 0, y: 0, z: 0}
-  MaxDistanceFromOrigin: 500
+  MaxDistanceFromOrigin: 300

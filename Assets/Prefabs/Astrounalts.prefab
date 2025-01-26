@@ -1603,7 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58de53c35c4234f208d2f448184b07fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthAmount: 5
+  HealthAmount: 100
   PickDialog: {fileID: 0}
 --- !u!1 &9168444640669083692
 GameObject:

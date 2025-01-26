@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 251bb7e89fb8a467bb0d481268d58cda
+guid: 74cc9928bdbbd478886d53c6c2582a3d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Gear_MT
-    second: {fileID: 2100000, guid: 03adbc98a4e614e78b7dc88a9a4d840a, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

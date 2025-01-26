@@ -1266,6 +1266,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 37372286}
   - {fileID: 1934692799}
   - {fileID: 1141303332}
   m_Father: {fileID: 0}
@@ -1572,7 +1573,6 @@ Transform:
   - {fileID: 1148038387}
   - {fileID: 1118696497}
   - {fileID: 1000609940}
-  - {fileID: 37372286}
   - {fileID: 1710953877}
   - {fileID: 1609957735}
   - {fileID: 1043458666}
@@ -2639,7 +2639,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1044799155}
+    m_TransformParent: {fileID: 861126880}
     m_Modifications:
     - target: {fileID: 3911788786000259085, guid: 7ef7b6ae65f4e4021ba3ad289ea31c70, type: 3}
       propertyPath: m_LocalPosition.x

@@ -1137,6 +1137,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  DeathText: You ded
+  WinText: And so you and the AI lived happily ever after
+  text: {fileID: 8768084422315317228}
   player: {fileID: 0}
 --- !u!225 &6128613344660877755
 CanvasGroup:

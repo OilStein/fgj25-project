@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8257791320117331297}
   - component: {fileID: 2206261679786449600}
   - component: {fileID: 3452171855938383333}
+  - component: {fileID: 4170575659114173795}
   m_Layer: 0
-  m_Name: DialogSystem
+  m_Name: Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,3 +143,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4170575659114173795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185611604385570733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345889e13b479e647bb2539b0f1d7133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BadEndingThreshold: 2
+  BadEndingDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}
+  GoodEndingDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}

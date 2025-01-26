@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
             healthPickTarget.MarkPicked();
             HealthPickTarget = null;
             HealthPicked(amount);
+            GameWinState.Instance.IncrementBadEndingCount();
         }
     }
 }

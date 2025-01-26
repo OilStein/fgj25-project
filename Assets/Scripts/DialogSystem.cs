@@ -23,9 +23,13 @@ public class DialogSystem : MonoBehaviour
         SetDialogEntry(currentSeries.Entries[currentIndex]);
     }
 
-    void Start()
+    void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
         audioSource = GetComponent<AudioSource>();
     }
 

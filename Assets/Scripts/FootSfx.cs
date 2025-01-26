@@ -36,7 +36,7 @@ public class FootSfx : MonoBehaviour
     void Update()
     {
         var movement = playerMovement.CurrentMovement;
-        if (playerMovement.IsGrounded && movement.magnitude > 1f)
+        if (playerMovement.IsGrounded && movement.magnitude > 1.1f)
         {
             if (distanceSinceLastFootstep >= FootstepDistance)
             {

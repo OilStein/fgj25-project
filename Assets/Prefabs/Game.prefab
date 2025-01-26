@@ -156,5 +156,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BadEndingThreshold: 2
-  BadEndingDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}
-  GoodEndingDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}
+  BadEndingDialog: {fileID: 11400000, guid: 60b24010227534047ae4df29fec60216, type: 2}
+  GoodEndingDialog: {fileID: 11400000, guid: 0a0e29d969c325b468c9b4e8bce09eb9, type: 2}

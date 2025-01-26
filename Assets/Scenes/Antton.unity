@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthAmount: 5
-  PickDialog: {fileID: 11400000, guid: ad9bdc1b83186a84ea0172cf8344ffe0, type: 2}
+  PickDialog: {fileID: 11400000, guid: 7e4219953b0b87a448361b0eb9ecdfac, type: 2}
 --- !u!135 &1894412684
 SphereCollider:
   m_ObjectHideFlags: 0

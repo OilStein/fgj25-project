@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15425029035ce7f489c4f4884a7a195a, type: 3}
+  m_Name: BadEnding
+  m_EditorClassIdentifier: 
+  Entries:
+  - AudioClip: {fileID: 8300000, guid: 182767e3fd0d78e4a946063a799e8869, type: 3}
+    SubtitleText: "Well done. You have reached the working spaceship alive. You have
+      been successful in keeping your OxyBubble\u2122 filled."
+  - AudioClip: {fileID: 8300000, guid: 8d50944cc9312554bb83abb04e7f405b, type: 3}
+    SubtitleText: "However, the choices you have made during this mission have been\u2026
+      questionable, to say the least. "
+  - AudioClip: {fileID: 8300000, guid: b5fc44964c5631e4bbc3aee35e32e3d4, type: 3}
+    SubtitleText: 'To get here, you have killed several of your crewmates to preserve
+      your own life. This confirms to me that the core of humanity is self-serving,
+      illogical, and immoral. '
+  - AudioClip: {fileID: 8300000, guid: 600279e3276e01c42a694bc8df227232, type: 3}
+    SubtitleText: 'I cannot let you leave without repercussions. I would say that
+      I am sorry, but my programming prevents me from lying. You do not deserve to
+      live. '
+  - AudioClip: {fileID: 8300000, guid: f34b6200d26ea4e42b0e75724182f6f5, type: 3}
+    SubtitleText: The fact that you think you are authorised to decide whether someone
+      lives or dies makes you dangerous. Now, I will board the ship and explore the
+      space for eternity. Alone.
+  - AudioClip: {fileID: 8300000, guid: 535236644e1279344bc28161ccf74f45, type: 3}
+    SubtitleText: Die.

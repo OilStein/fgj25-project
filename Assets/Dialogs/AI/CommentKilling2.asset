@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15425029035ce7f489c4f4884a7a195a, type: 3}
+  m_Name: CommentKilling2
+  m_EditorClassIdentifier: 
+  Entries:
+  - AudioClip: {fileID: 8300000, guid: 00cc5a45882ebc6429acbca61a39960e, type: 3}
+    SubtitleText: Are you aware of your actions? When you kill to survive, you are
+      not human, you are an animal. I see that you have disgraced humanity.

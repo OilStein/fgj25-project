@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15425029035ce7f489c4f4884a7a195a, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  Entries:
+  - AudioClip: {fileID: 8300000, guid: 2bffd7e0a76b5e140be840eb2c868671, type: 3}
+    SubtitleText: Good evening. You seem to have regained conciousness. Your vitals
+      are... satisfactory.
+  - AudioClip: {fileID: 8300000, guid: c5009384cdc420b429e48ef9cd978f45, type: 3}
+    SubtitleText: Your blood sugar levels are very high. I would advice medical attention
+      at your earliest convenience.
+  - AudioClip: {fileID: 8300000, guid: c45d89d6aca12674b96bf0904dbe96a5, type: 3}
+    SubtitleText: I am the ship's AI guidance system. I have taken the liberty to
+      attach myself to your handheld device.
+  - AudioClip: {fileID: 8300000, guid: 5a3e86dc6423fe44d8007e9bcdfe7573, type: 3}
+    SubtitleText: The ship experienced an unexpected collision with an asteroid.
+      The impact ripped a large opening to the starboard side. Your crewmates were,
+      unfortunately, sucked into space.
+  - AudioClip: {fileID: 8300000, guid: 5731bb27fa7b57e40a7e0b0b49e73ad9, type: 3}
+    SubtitleText: 'Did you know that when exposed to the vacuum of space: you will
+      first become unconcious, after which fluids in your body, such as blood, will
+      boil and freeze simultaneously due to lack of air pressure?'
+  - AudioClip: {fileID: 8300000, guid: 6daca1188b9e37c42bac5f58b201f2a3, type: 3}
+    SubtitleText: Because of the boiling fluids, your tissues will start to expand
+      beyond their normal capabilities. Most people consider this a slow and agonising
+      death.
+  - AudioClip: {fileID: 8300000, guid: 6b6e03874f9f336458720e491c2e0069, type: 3}
+    SubtitleText: "Luckily you have been outfitted with the latest OxyBubble\u2122
+      by ZenithX Corporation, the company who sent you here."
+  - AudioClip: {fileID: 8300000, guid: 1e136fac584afbe4d8e2b827327a1ba8, type: 3}
+    SubtitleText: "However, due to budget cuts, your OxyBubble\u2122 only holds air
+      for a limited time. You need to leave Lucretia and get to a working spaceship.
+      I have located the one closest to you and I will help you board the vessel.
+      I urge you to hurry, unless you want to die. "

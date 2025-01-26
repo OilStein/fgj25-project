@@ -51,15 +51,11 @@ public class Player : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
 
-        playerInput.Actions.Reload.performed += Reload;
-        playerInput.Actions.Interact.started += PickHealth;
         playerMovement.Dashed += OnDash;
     }
 
     void OnDestroy()
     {
-        playerInput.Actions.Reload.performed -= Reload;
-        playerInput.Actions.Interact.started -= PickHealth;
         playerMovement.Dashed -= OnDash;
     }
 
@@ -99,6 +95,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (playerInput.Actions.Reload.WasCompletedThisFrame())
+        {
+            Reload();
+        }
+        if (playerInput.Actions.Interact.WasPerformedThisFrame())
+        {
+            PickHealth();
+        }
+
         if (healthGain != 0)
         {
             GainHealth(healthGain * Time.deltaTime);
@@ -119,7 +124,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Reload(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void Reload()
     {
         SceneManager.LoadScene(MainMenuScene);
     }
@@ -129,7 +134,7 @@ public class Player : MonoBehaviour
         DrainHealth(DashDrain);
     }
 
-    private void PickHealth(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void PickHealth()
     {
         if (healthPickTarget)
         {

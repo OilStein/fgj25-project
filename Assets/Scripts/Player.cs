@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     public float DashDrain = 10f;
 
+    public int MainMenuScene = 0;
+
     private float health;
 
     private bool isDead = false;
@@ -119,7 +121,7 @@ public class Player : MonoBehaviour
 
     private void Reload(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(MainMenuScene);
     }
 
     private void OnDash()
